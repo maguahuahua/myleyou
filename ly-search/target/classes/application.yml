@@ -1,0 +1,25 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: search-service
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 192.168.43.34:9300
+#结果过滤是为null的就不显示了
+  jackson:
+    default-property-inclusion: non_null
+  rabbitmq:
+    host: 192.168.43.34
+    username: chenxm
+    password: chenxm
+    virtual-host: /leyou
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10000/eureka
+    registry-fetch-interval-seconds: 5
+#  instance:
+#    prefer-ip-address: true
+#    ip-address: 127.0.0.1

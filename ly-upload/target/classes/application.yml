@@ -1,0 +1,29 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: upload-service
+  servlet:
+    multipart:
+      max-file-size: 5MB
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10000/eureka
+fdfs:
+  so-timeout: 2500
+  connect-timeout: 600
+  thumb-image:      #缩略图
+    width: 60
+    height: 60
+  tracker-list:   #tracker地址
+    - 192.168.43.34:22122
+#优雅，service就不写字符串
+ly:
+  upload:
+    baseUrl: http://image.leyou.com/
+    allowTypes:
+      - image/jepg
+      - image/jpg
+      - image/png
+      - image/bmp

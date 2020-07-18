@@ -1,0 +1,30 @@
+server:
+  port: 8000
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/ly2? characterEncoding=utf8 & useSSL=false & serverTimezone=UTC & rewriteBatchedStatements=true
+    username: root
+    password: root
+  application:
+    name: item-service
+  rabbitmq:
+    host: 192.168.43.34
+    username: chenxm
+    password: chenxm
+    virtual-host: /leyou
+    template:
+      retry:
+        enabled: true
+        initial-interval: 10000ms
+        max-interval: 30000ms
+        multiplier: 2
+      exchange: ly.item.exchange
+    publisher-confirms: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10000/eureka
+#日志，输出sql语句应该是
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
