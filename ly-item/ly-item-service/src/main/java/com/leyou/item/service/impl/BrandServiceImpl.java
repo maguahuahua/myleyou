@@ -70,7 +70,6 @@ public class BrandServiceImpl implements BrandService {
             throw new LyException(ExceptionEnum.BRAND_SAVE_ERROR);
         }
 
-        //11aa
         //新增中间表
         for (Long cid : cids) {
             conut = brandMapper.insertCategoryBrand(cid, brand.getId());
