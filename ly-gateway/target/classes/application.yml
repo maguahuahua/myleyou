@@ -10,12 +10,16 @@ eureka:
 zuul:
   prefix: /api # 添加路由前缀
   routes:
-    item-service: /item/**         #多写的匹配路径
-    search-service: /search/**
+    item-service: /item/**         #商品微服务的映射路径
+    search-service: /search/**    # 搜索微服务
+    user-service: /user/**        #用户微服务
+    auth-service: /auth/**    # 授权中心微服务
     upload-service:
       path: /upload/**
       serviceId: upload-service
       strip-prefix: false
+  add-host-header: true        #携带请求本身的head头信息
+  sensitive-headers: #配置禁止使用的头信息，这里设置为nul1, 否则set-cookie无效
 ribbon:
   ConnectTimeout: 1000 # 连接超时时间(ms)
   ReadTimeout: 3500 # 读取超时时间(ms)
@@ -28,3 +32,15 @@ hystrix:
         isolation:
           thread:
             timeoutInMillisecond: 5000 # 熔断超时时长：5000ms
+leyou:
+  jwt:
+    pubKeyPath: D:\idea\myfiles\ly2\rsa\rsa.pub # 公钥地址
+    cookieName: LY_TOKEN
+  filter:
+    allowPaths:
+      - /api/auth
+      - /api/search
+      - /api/user/register
+      - /api/user/check
+      - /api/user/code
+      - /api/item

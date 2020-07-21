@@ -7,8 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ly-sms" />
+        <module name="ly-user-interface" />
+        <module name="ly-user-service" />
+        <module name="ly-auth-service" />
         <module name="ly-item-service" />
         <module name="ly-pages" />
+        <module name="ly-auth-common" />
         <module name="ly-upload" />
         <module name="ly-item-interface" />
         <module name="ly-gateway" />
@@ -24,6 +29,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ly-auth" options="-parameters" />
+      <module name="ly-auth-common" options="-parameters" />
+      <module name="ly-auth-service" options="-parameters" />
       <module name="ly-common" options="-parameters" />
       <module name="ly-gateway" options="-parameters" />
       <module name="ly-item" options="-parameters" />
@@ -33,7 +41,10 @@
       <module name="ly-pages" options="-parameters" />
       <module name="ly-registry" options="-parameters" />
       <module name="ly-search" options="-parameters" />
+      <module name="ly-sms" options="-parameters" />
       <module name="ly-upload" options="-parameters" />
+      <module name="ly-user-interface" options="-parameters" />
+      <module name="ly-user-service" options="-parameters" />
       <module name="lyregistry" options="-parameters" />
     </option>
   </component>
