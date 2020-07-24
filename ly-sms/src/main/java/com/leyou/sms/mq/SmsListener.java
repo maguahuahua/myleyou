@@ -21,8 +21,8 @@ import java.util.Map;
  * @author chenxm
  * @date 2020/7/18 - 20:27
  */
-@Component
-@EnableConfigurationProperties(SmsProperties.class)
+//@Component
+//@EnableConfigurationProperties(SmsProperties.class)
 public class SmsListener {
 
     @Autowired

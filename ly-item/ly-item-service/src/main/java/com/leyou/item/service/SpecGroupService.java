@@ -1,8 +1,7 @@
 package com.leyou.item.service;
 
-import com.leyou.item.pojo.SpecGroup;
-import com.leyou.item.pojo.SpecParam;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.leyou.pojo.SpecGroup;
+import com.leyou.pojo.SpecParam;
 
 import java.util.List;
 

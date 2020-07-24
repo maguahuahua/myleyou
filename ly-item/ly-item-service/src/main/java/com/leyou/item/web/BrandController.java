@@ -1,15 +1,13 @@
 package com.leyou.item.web;
 
 import com.leyou.common.vo.PageResult;
-import com.leyou.item.pojo.Brand;
+import com.leyou.pojo.Brand;
 import com.leyou.item.service.impl.BrandServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 /**

@@ -1,9 +1,10 @@
 package com.leyou.item.service;
 
 import com.leyou.common.vo.PageResult;
-import com.leyou.item.pojo.Sku;
-import com.leyou.item.pojo.Spu;
-import com.leyou.item.pojo.SpuDetail;
+import com.leyou.dto.CartDTO;
+import com.leyou.pojo.Sku;
+import com.leyou.pojo.Spu;
+import com.leyou.pojo.SpuDetail;
 
 import java.util.List;
 
@@ -21,4 +22,8 @@ public interface GoodsService {
     List<Sku> querySkuById(Long spuId);
 
     Spu querySpuById(Long id);
+
+    List<Sku> querySkuByIds(List<Long> ids);
+
+    void decreaseStock(List<CartDTO> carts);
 }

@@ -1,8 +1,7 @@
 package com.leyou.item.service;
 
 import com.leyou.common.vo.PageResult;
-import com.leyou.item.pojo.Brand;
-import com.leyou.item.pojo.Category;
+import com.leyou.pojo.Brand;
 
 import java.util.List;
 

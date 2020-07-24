@@ -1,8 +1,7 @@
 package com.leyou.item.mapper;
 
 import com.leyou.common.mapper.BaseMapper;
-import com.leyou.item.pojo.Brand;
-import com.leyou.item.pojo.Category;
+import com.leyou.pojo.Brand;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

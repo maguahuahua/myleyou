@@ -1,5 +1,6 @@
 package com.leyou.gateway.filter;
 
+import com.leyou.auth.entity.UserInfo;
 import com.leyou.auth.utils.JwtUtils;
 import com.leyou.common.utils.CookieUtils;
 import com.leyou.gateway.config.FilterProperties;
@@ -70,8 +71,8 @@ public class LoginFilter extends ZuulFilter {
         // 校验
         try {
             // 校验通过什么都不做，即放行
-            JwtUtils.getInfoFromToken(token, jwtProperties.getPublicKey());
-            //TODO 校验权限
+            UserInfo userInfo = JwtUtils.getInfoFromToken(token, jwtProperties.getPublicKey());
+            //TODO 校验权限,得到用户信息，得到用户权限，根据request中url判断是是否具有对应权限
         } catch (Exception e) {
             // 解析token失败，未登录，拦截，返回403
             context.setSendZuulResponse(false);

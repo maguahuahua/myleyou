@@ -1,7 +1,7 @@
 package com.leyou.item.mapper;
 
 import com.leyou.common.mapper.BaseMapper;
-import com.leyou.item.pojo.SpuDetail;
+import com.leyou.pojo.SpuDetail;
 
 /**
  * @author chenxm

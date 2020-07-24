@@ -1,8 +1,7 @@
 package com.leyou.item.api;
 
-import com.leyou.item.pojo.SpecGroup;
-import com.leyou.item.pojo.SpecParam;
-import org.springframework.http.ResponseEntity;
+import com.leyou.pojo.SpecGroup;
+import com.leyou.pojo.SpecParam;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;

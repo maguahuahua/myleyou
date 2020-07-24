@@ -5,13 +5,13 @@ import com.github.pagehelper.PageInfo;
 import com.leyou.common.enums.ExceptionEnum;
 import com.leyou.common.exception.LyException;
 import com.leyou.common.vo.PageResult;
+import com.leyou.dto.CartDTO;
 import com.leyou.item.mapper.*;
-import com.leyou.item.pojo.*;
 import com.leyou.item.service.BrandService;
 import com.leyou.item.service.CategoryService;
 import com.leyou.item.service.GoodsService;
+import com.leyou.pojo.*;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.tomcat.util.http.fileupload.util.LimitedInputStream;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,9 +20,7 @@ import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @author chenxm
@@ -193,6 +191,28 @@ public class GoodsServiceImpl implements GoodsService {
         //查detail
         spu.setSpuDetail(queryDetailById(id));
         return spu;
+    }
+
+    @Override
+    public List<Sku> querySkuByIds(List<Long> ids) {
+        List<Sku> skus = skuMapper.selectByIdList(ids);
+        if (CollectionUtils.isEmpty(skus)) {
+            throw new LyException(ExceptionEnum.GOODS_NOT_FOUND);
+        }
+//       fillStock(ids,skus);
+        return skus;
+    }
+
+    @Transactional
+    @Override
+    public void decreaseStock(List<CartDTO> carts) {
+        for (CartDTO cart : carts) {
+            int count = stockMapper.decreaseStock(cart.getSkuId(), cart.getNum());
+            if (count != 1) {
+                throw new LyException(ExceptionEnum.STOCK_NOT_ENOUGH);
+            }
+        }
+
     }
 
 

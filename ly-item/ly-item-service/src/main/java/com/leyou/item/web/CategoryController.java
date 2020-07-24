@@ -1,9 +1,7 @@
 package com.leyou.item.web;
 
-import com.leyou.item.pojo.Category;
+import com.leyou.pojo.Category;
 import com.leyou.item.service.CategoryService;
-import lombok.AllArgsConstructor;
-import lombok.experimental.PackagePrivate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

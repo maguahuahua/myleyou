@@ -1,9 +1,8 @@
 package com.leyou.item.web;
 
-import com.leyou.item.pojo.SpecGroup;
-import com.leyou.item.pojo.SpecParam;
+import com.leyou.pojo.SpecGroup;
+import com.leyou.pojo.SpecParam;
 import com.leyou.item.service.SpecGroupService;
-import com.leyou.item.service.impl.SpecGroupServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

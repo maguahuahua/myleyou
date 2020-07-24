@@ -1,11 +1,10 @@
 package com.leyou.search.repository;
 
 import com.leyou.common.vo.PageResult;
-import com.leyou.item.pojo.Spu;
+import com.leyou.pojo.Spu;
 import com.leyou.search.client.GoodsClient;
 import com.leyou.search.pojo.Goods;
 import com.leyou.search.service.SearchService;
-import org.elasticsearch.client.ElasticsearchClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +15,6 @@ import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import static org.junit.Assert.*;
 
 /**
  * @author chenxm

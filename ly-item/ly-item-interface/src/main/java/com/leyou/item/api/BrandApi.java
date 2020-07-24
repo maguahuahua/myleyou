@@ -1,7 +1,6 @@
 package com.leyou.item.api;
 
-import com.leyou.item.pojo.Brand;
-import org.springframework.http.ResponseEntity;
+import com.leyou.pojo.Brand;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;

@@ -1,9 +1,10 @@
 package com.leyou.item.web;
 
 import com.leyou.common.vo.PageResult;
-import com.leyou.item.pojo.Sku;
-import com.leyou.item.pojo.Spu;
-import com.leyou.item.pojo.SpuDetail;
+import com.leyou.dto.CartDTO;
+import com.leyou.pojo.Sku;
+import com.leyou.pojo.Spu;
+import com.leyou.pojo.SpuDetail;
 import com.leyou.item.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -69,9 +70,31 @@ public class GoodsController {
     }
 
     @GetMapping("/spu/{id}")
-   public ResponseEntity<Spu>  querySpuById(@PathVariable("id") Long id){
+    public ResponseEntity<Spu> querySpuById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(goodsService.querySpuById(id));
     }
 
+    /**
+     * 根据skuid集合查所有sku
+     *
+     * @param ids
+     * @return
+     */
+    @GetMapping("sku/list/ids")
+    public ResponseEntity<List<Sku>> querySkuByIds(@RequestParam("ids") List<Long> ids) {
+        return ResponseEntity.ok(goodsService.querySkuByIds(ids));
+    }
+
+    /**
+     * 减库存
+     *
+     * @param carts
+     * @return
+     */
+    @PostMapping("stock/decrease")
+    public ResponseEntity<Void> decreaseStock(@RequestBody List<CartDTO> carts) {
+        goodsService.decreaseStock(carts);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
 
 }
